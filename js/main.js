@@ -92,7 +92,10 @@ fetch(url)
 /* home cards end here */
 
 
-
+/* search section starts here */
+const searchDisplay = document.querySelector('#search-display').value;
+console.log(searchDisplay);
+/* search section ends here */
 
 
 

@@ -56,6 +56,11 @@ body {
 .active {
     color: black;
 }
+.title {
+    font-size: 4rem;
+    text-align: start;
+    padding: 1rem;
+}
 .footer {
     display: flex;
     flex-direction: row;
@@ -150,11 +155,7 @@ img:hover {
 
 
 
-h1 {
-    font-size: 4rem;
-    text-align: center;
-    padding: 3rem;
-}
+
 h2 {
     font-size: 2rem;
 }
