@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    box-sizing: border-box;
+    font-family: 'Changa', sans-serif;
+    font-family: 'Heebo', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Tenali Ramakrishna', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Ubuntu Mono', monospace;
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+body {
+    width: 80vw;
+    height: 80dvh;
+    margin: 0 auto;
+}
+.nav {
+    background-color: white;
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+}
+.list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+.list-items {
+    list-style: none;
+    
+}
+.link {
+    font-size: 3rem;
+    text-decoration: none;
+    font-family: 'poppins', sans-serif;
+    font-weight: 900;
+    color: #551A8B;
+    transition: all 300ms ease-in-out;
+}
+.link:hover {
+    color: black;
+    
+}
+.active {
+    color: black;
+}
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+    
+}
+.fa-brands {
+    font-size: 3rem;
+    color: #000000;
+    font-weight: 900;
+    margin-bottom: 5rem;
+    transition: all 700ms ease-in-out;
+}
+.icon:hover {
+    transform: rotate(360deg) scale(1.5);
+}
+.button {
+    width: 5rem;
+    position: absolute;
+    top: 0;
+    right: 25%;
+    background-color: #551A8B;
+    color: white;
+}   
+button {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 4.5rem;
+    font-size: 1.5rem;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgb(183, 183, 183);
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+}
+button:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+.dark-mode {
+    background-color: #000000d0;
+    color: white;
+    transition: all 800ms ease-in-out;
+}
+.light-mode {
+    background-color: white;
+    color: #541a8bda;
+    transition: all 800ms ease-in-out;
+}
+.cards-container {
+    /* background-color: #551A8B; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+.card {
+    border: 1px solid rgb(97, 97, 97);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 3px 3px 10px black;
+    overflow: hidden;
+}
+img {
+    display: block;
+    width: 100%;
+    border-radius: 1rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 1px 1px 5px rgb(255, 255, 255);
+    transition: all 300ms ease-in-out;
+}
+img:hover {
+    transform: scaleX(1.040);    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h1 {
+    font-size: 4rem;
+    text-align: center;
+    padding: 3rem;
+}
+h2 {
+    font-size: 2rem;
+}
+h3 {
+    font-size: 2.7rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+p {
+    font-size: 1.5rem;
+    padding: 0.3rem;
+}
+p:nth-child(3) {
+    margin-bottom: 2rem;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 5rem;
+    border: 1px solid grey;
+    border-radius: 1rem;
+    padding: 3rem;
+    background-color: rgb(222, 222, 222);
+    box-shadow: 1px 3px 7px grey;
+}
+
+label {
+    font-size: 1.8rem;
+}
+
+input {
+    margin: 1rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+}
+
+
+
