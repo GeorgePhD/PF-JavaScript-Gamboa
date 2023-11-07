@@ -25,28 +25,34 @@
     <main class="main-content">
         <h1 class="title">Rick and Morty API</h1>
         <h2 class="subtitle">Search</h2>
-        <p>Busca el personaje, la información será obtenida desde la API y mostrada en esta página.</p>
-        <label for="search">Buscar</label>
-        <input type="search" id="search">
-        <input type="button" id="displayBtn" value="Mostrar">
-        <div id="search-display"></div>
+        <p class="search-description">Busca el personaje, la información será obtenida desde la API y la verás en esta página.</p>
+        <p class="search-characters-list">Personajes: Rick Sanchez, Morty Smith, Summer Smith, Beth Smith, Jerry Smith, Abadango Cluster Princess, Abradolf Lincler, Adjudicator Rick, Agency Director, Alan Rails, Albert Einstein, Alexander, Alien Googah, Alien Morty, Alien Rick, Amish Cyborg, Annie, Antenna Morty, Antenna Rick, Ants in my Eyes Johnson. </p>
+
+        <div class="search-container-display">
+            <div class="inputs-container">
+                <label for="search">Buscar</label>
+                <input type="search" id="search" placeholder="enter charater name">
+                <input type="button" id="displayBtn" value="Mostrar">
+            </div>
+            <div id="search-display"></div>
+        </div>
     </main>
 
 
     <footer class="footer">
         <div class="icon-container">
             <a target="_blank" href="https://github.com/GeorgePhD/">
-                <i class="fa-brands fa-github"></i>
+                <i class="fa-brands fa-github icon"></i>
             </a>
         </div>
         <div class="icon-container">
             <a target="_blank" href="https://www.instagram.com/devel0pme">
-                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-instagram icon"></i>
             </a>
         </div>
         <div class="icon-container">
             <a target="_blank" href="https://www.linkedin.com/in/jorgegamboafernandez/">
-                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-linkedin icon"></i>
             </a>
         </div>
     </footer>
