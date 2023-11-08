@@ -133,7 +133,19 @@ console.log(displayButton);
                 const favSection = document.querySelector('#favorites-section');
                 console.log('added to favorites');
                 
-                if (favSection) {
+                if(result) {
+
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Character added to favorites",
+                        showConfirmButton: false,
+                        timer: 2000
+                    });
+                    
+                } 
+                
+                if (favSection) {//not working
                     
                     favSection.innerHTML = `<p>hola</p>`;
 
@@ -147,10 +159,24 @@ console.log(displayButton);
         } else {
     
             searchDisplay.innerHTML = `<p class='search-error'>Character not found.</p>`;
+            Swal.fire({
+                width: '400px',
+                icon: "error",
+                iconColor: "#551A8B",
+                title: "Oops...",
+                text: "Character not found.",
+                popup: 'swal2-show',
+                backdrop: 'swal2-backdrop-show',
+                timer: 2000
+                //footer: '<a href="#">Why do I have this issue?</a>'
+            });
+            
             
         }
     });
 };
+
+
 const favSection = document.querySelector('#favorites-section');
 console.log(favSection);
 
@@ -162,7 +188,102 @@ console.log(favSection);
 //adding to favorites ends here
 
 
+//form validation
+document.addEventListener('DOMContentLoaded', function () {
+    // Your form validation code here
+    const form = document.getElementById('contact-form');
 
+form.addEventListener('submit', (event) => {
+    // Prevent the default form submission
+    event.preventDefault();
+
+    // Perform form validation here
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const cellphoneInput = document.getElementById('cellphone-number');
+
+    // Check if any field is empty
+    
+    if (nameInput.value.trim() === '' || emailInput.value.trim() === '' || cellphoneInput.value.trim() === '') {
+        
+        Swal.fire({
+            width: '400px',
+            icon: "error",
+            iconColor: "#551A8B",
+            title: "Oops...",
+            text: "All information must be completed.",
+            popup: 'swal2-show',
+            backdrop: 'swal2-backdrop-show',
+            //timer: 2000
+            
+        });
+        return; // Stop form submission
+    };
+
+    if (!isNaN(nameInput.value)) {
+        Swal.fire({
+            width: '400px',
+            icon: "error",
+            iconColor: "#551A8B",
+            title: "Oops...",
+            text: "Please enter a valid name.",
+            popup: 'swal2-show',
+            backdrop: 'swal2-backdrop-show',
+            //timer: 2000
+            
+        });
+        return; // Stop form submission
+    }
+
+
+    // Example validation: Check if the email is a valid format
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(emailInput.value)) {
+        Swal.fire({
+            width: '400px',
+            icon: "error",
+            iconColor: "#551A8B",
+            title: "Oops...",
+            text: "please enter a valid email address.",
+            popup: 'swal2-show',
+            backdrop: 'swal2-backdrop-show',
+            //timer: 2000
+            
+        });
+        return; // Stop form submission
+    }
+
+    // Example validation: Check if the cellphone number is a number
+    const cellphonePattern = /^\d{9}$/;
+    if (!cellphonePattern.test(cellphoneInput.value)) {
+        Swal.fire({
+            width: '400px',
+            icon: "error",
+            iconColor: "#551A8B",
+            title: "Oops...",
+            text: "please enter a valid cellphone number, it must have 9 digits.",
+            popup: 'swal2-show',
+            backdrop: 'swal2-backdrop-show',
+            //timer: 2000
+            
+        });
+        return; // Stop form submission
+    }
+
+
+    // If all validations pass, you can proceed with form submission or other actions.
+    // For demonstration, we'll simply log a success message.
+    Swal.fire({
+
+        position: "center",
+        icon: "success",
+        title: "Form submitted successfully",
+        showConfirmButton: false,
+        timer: 2000
+    });
+});
+
+});
 
 
 
