@@ -25,7 +25,7 @@ const updateUIForUserModePreference = () => {
 };
 
 const changeModes = () => {
-    console.log('Mode changed');
+    //console.log('Mode changed');
 
     if (body.classList.contains('dark-mode')) {
         body.classList.remove('dark-mode');
@@ -44,15 +44,17 @@ changeMode.addEventListener('click', changeModes);
 updateUIForUserModePreference();
 
 
-/* home cards start here */
-const url = 'https://rickandmortyapi.com/api/character';
 
-let data;
+/* home cards start here */
+document.addEventListener('DOMContentLoaded', () => {
+    
+    const url = 'https://rickandmortyapi.com/api/character';
+
 fetch(url)
     .then((response) => response.json())
     .then((responseData) => {
         data = responseData;
-        console.log(data);
+        //console.log(data);
 
         if (data.results) {
             data.results.forEach((result) => {
@@ -62,7 +64,7 @@ fetch(url)
                 // Create and populate elements for character information
                 const name = document.createElement('h2');
                 name.textContent = result.name;
-
+                //console.log(result.name)
                 const status = document.createElement('p');
                 status.textContent = `Status: ${result.status}`;
 
@@ -94,43 +96,70 @@ fetch(url)
     });
 
 /* home cards end here */
-
+})
 
 /* search section starts here */
 const userSearch = document.querySelector('#search');
 console.log(userSearch);
-const displayButton = document.querySelector('#displayBtn');
-console.log(displayButton);
 const searchDisplay = document.querySelector('#search-display');
 console.log(searchDisplay);
-const addToFavoritesButton = document.querySelector('#add-to-favorites');
+const displayButton = document.querySelector('#displayBtn');
+console.log(displayButton);
 
-displayButton.addEventListener('click', () => {
 
-    const searchName = userSearch.value.toLowerCase();
-    const result = data.results.find((character) => character.name.toLowerCase() === searchName);
+    if (displayButton) {
 
-    if (result) {
+    displayButton.addEventListener('click', (e) => {
+        e.preventDefault();
 
-        searchDisplay.innerHTML = `
-        <div class='search-container'>
-        <h3 class='search-subtitle'>character found:</h3>
-        <p class='search-name'>${result.name}</p>
-        <p class='search-status'>Status: ${result.status}</p>
-        <p class='search-species'>Species: ${result.species}</p>
-        <button class='add-to-favorites' id='add-to-favorites' title='add to favorites, it will be shown in the favorites section'><i class="fa-solid fa-heart"></i></button>
-        <img class='search-img' src=${result.image}>
-        </div>
-        `;
+        const searchName = userSearch.value.toLowerCase();
+        const result = data.results.find((character) => character.name.toLowerCase() === searchName);
+        
+        if (result) {
+    
+            searchDisplay.innerHTML = `
+            <div class='search-container'>
+                <h3 class='search-subtitle'>character found:</h3>
+                <p class='search-name'>${result.name}</p>
+                <p class='search-status'>Status: ${result.status}</p>
+                <p class='search-species'>Species: ${result.species}</p>
+                <img class='search-img' src=${result.image}>
+            </div>
+            `;
+            
+            const addToFavoritesButton = document.querySelector('#add-to-favorites');
+            
+            addToFavoritesButton.addEventListener('click', () => {
+                const favSection = document.querySelector('#favorites-section');
+                console.log('added to favorites');
+                
+                if (favSection) {
+                    
+                    favSection.innerHTML = `<p>hola</p>`;
 
-    } else {
+                } else {
+                    console.error('No favorites section found.');
+                    
+                }
+                        
+            });
 
-        searchDisplay.innerHTML = `<p class='search-error'>Character not found.</p>`;
-    }
-
-})
+        } else {
+    
+            searchDisplay.innerHTML = `<p class='search-error'>Character not found.</p>`;
+            
+        }
+    });
+};
+const favSection = document.querySelector('#favorites-section');
+console.log(favSection);
 
 /* search section ends here */
+
+//adding to favorites starts here
+
+
+//adding to favorites ends here
 
 
 
