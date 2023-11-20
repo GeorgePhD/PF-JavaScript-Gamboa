@@ -100,11 +100,11 @@ fetch(url)
 
 /* search section starts here */
 const userSearch = document.querySelector('#search');
-console.log(userSearch);
+//console.log(userSearch);
 const searchDisplay = document.querySelector('#search-display');
-console.log(searchDisplay);
+//console.log(searchDisplay);
 const displayButton = document.querySelector('#displayBtn');
-console.log(displayButton);
+//console.log(displayButton);
 
 
     if (displayButton) {
@@ -130,9 +130,9 @@ console.log(displayButton);
             const addToFavoritesButton = document.querySelector('#add-to-favorites');
             
             addToFavoritesButton.addEventListener('click', () => {
-                const favSection = document.querySelector('#favorites-section');
-                console.log('added to favorites');
-                
+                console.log(`Added to favorites, button clicked, ${result.name} added.`);
+                localStorage.setItem('result', JSON.stringify(result));
+                console.log(localStorage);
                 if(result) {
 
                     Swal.fire({
@@ -141,19 +141,8 @@ console.log(displayButton);
                         title: "Character added to favorites",
                         showConfirmButton: false,
                         timer: 2000
-                    });
-                    
-                } 
-                
-                if (favSection) {//not working
-                    
-                    favSection.innerHTML = `<p>hola</p>`;
-
-                } else {
-                    console.error('No favorites section found.');
-                    
-                }
-                        
+                    });                    
+                }                         
             });
 
         } else {
@@ -170,30 +159,18 @@ console.log(displayButton);
                 timer: 2000
                 //footer: '<a href="#">Why do I have this issue?</a>'
             });
-            
-            
         }
     });
 };
 
-
-const favSection = document.querySelector('#favorites-section');
-console.log(favSection);
-
 /* search section ends here */
-
-//adding to favorites starts here
-
-
-//adding to favorites ends here
-
 
 //form validation
 document.addEventListener('DOMContentLoaded', function () {
     // Your form validation code here
     const form = document.getElementById('contact-form');
 
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit', (event) => { //showing error cannot read properties of null
     // Prevent the default form submission
     event.preventDefault();
 

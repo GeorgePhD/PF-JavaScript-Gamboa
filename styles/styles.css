@@ -168,6 +168,18 @@ input {
 .add-to-favorites:hover {
     background-color: #551A8B;
     color: white;
+    
+}
+.clear-favorites {
+    width: 15rem;
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: 1rem;
+}
+.clear-favorites:hover {
+    background-color: #551A8B;
+    color: white;
+    cursor: pointer;
 }
 .button:hover {
     background-color: rgb(0, 0, 0);
